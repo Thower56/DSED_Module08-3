@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DSED-Module08_Exercice3.props" />
+</Project>
