@@ -29,12 +29,12 @@ namespace DSED_Module08_Exercice3
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoint =>
             {
                 endpoint.MapRazorPages();
-                endpoint.MapHub<CentreAppelHub>("/centreappelhub");
+                endpoint.MapHub<CentreAppelHub>("/CentreAppelHub");
                 endpoint.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Session4\\Distrubution\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj": {}
+    "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj": {}
   },
   "projects": {
-    "C:\\Session4\\Distrubution\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj": {
+    "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Session4\\Distrubution\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
+        "projectUniqueName": "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
         "projectName": "DSED-Module08_Exercice3",
-        "projectPath": "C:\\Session4\\Distrubution\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
+        "projectPath": "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
         "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-        "outputPath": "C:\\Session4\\Distrubution\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3\\obj\\",
+        "outputPath": "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",

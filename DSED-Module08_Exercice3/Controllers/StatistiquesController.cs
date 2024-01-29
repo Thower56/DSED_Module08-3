@@ -1,6 +1,8 @@
 ﻿
+using DSED_Module08_Exercice3.Hubs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DSED_Module08_Exercice3.Controllers
 {
@@ -8,7 +10,13 @@ namespace DSED_Module08_Exercice3.Controllers
     [ApiController]
     public class StatistiquesController : ControllerBase
     {
+        private IHubContext<CentreAppelHub> m_CentreAppel;
+        //StatistiquesController(IHubContext<CentreAppelHub> p_CentreAppel) 
+        //{
+        //    m_CentreAppel = p_CentreAppel;
+        //}
 
+        public StatistiquesController() { }
 
         [HttpGet]
         [ProducesResponseType(200)]
@@ -41,6 +49,7 @@ namespace DSED_Module08_Exercice3.Controllers
             }
             p_Appel.Id = Statistique.DernierId + 1;
             p_Appel.DebutAppel = DateTime.Now;
+            p_Appel.FinAppel = DateTime.Now;
             p_Appel.IdAgent = id;
 
             Statistique.AddAppel(p_Appel);

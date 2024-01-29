@@ -3,17 +3,64 @@
 }
 
 <h2 id="titreRoom">Statistiques du service</h2>
-
+<h3>
+<span id="titreRoom">Nombre d'appels reçus aujourdhui: </span>
+    <span id="nbAppel"></span>
+</h3>
+<h3>
+    <span id="titreRoom">Temps moyen passe par appel: </span>
+    <span id="appelMoyen"></span>
+</h3>
+<h3>
+<span id="titreRoom">Nombre d'agents presents: </span>
+    <span id="nbAgent"></span>
+</h3>
 
 
 @section Scripts {
-    <script src="~/js/centreAppel.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+    
 
     <script>
         $(function () {
-            
 
-                
+            let nbAppel = document.getElementById("nbAppel");
+            let appelMoyen = document.getElementById("appelMoyen");
+            let nbAppelEnAttente = document.getElementById("nbAppelEnAttente");
+
+            let connexion = new signalR.HubConnectionBuilder().withUrl("/CentreAppelHub").build();
+
+            if (connexion)
+            {
+
+                connexion.on("CurrentDayCalls", function (nb) {
+                    nbAppel.innerHTML = nb;
+                });
+
+                connexion.on("AverageCallDuration", function (temps) {
+                    appelMoyen.innerHTML = temps;
+                });
+
+                connexion.on("NumberOfAgents", function (nb) {
+                    nbAgent.innerHTML = nb;
+                });
+
+
+
+                connexion.start().then(function () {
+                    console.log("Connexion au hub reussie");
+                    update();
+                }).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            }
+
+            function update() {
+                connexion.invoke("Update");
+                console.log("Update !")
+            }
+            
         })
     </script>
 }
