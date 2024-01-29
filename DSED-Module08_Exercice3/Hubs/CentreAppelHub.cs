@@ -12,7 +12,7 @@ namespace DSED_Module08_Exercice3.Hubs
 
         public async Task GetAverageCallDuration()
         {
-            await Clients.All.SendAsync("AverageCallDuration", Statistique.GetAppels().Average(call => call.DureeAppel));
+            await Clients.All.SendAsync("AverageCallDuration", Statistique.DureeMoyenneAppels);
         }
 
         public async Task GetNumberOfAgents()

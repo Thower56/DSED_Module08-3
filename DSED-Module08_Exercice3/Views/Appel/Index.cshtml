@@ -46,7 +46,7 @@
                     nbAgent.innerHTML = nb;
                 });
 
-
+                connexion.on("Update", function () { update(); })
 
                 connexion.start().then(function () {
                     console.log("Connexion au hub reussie");

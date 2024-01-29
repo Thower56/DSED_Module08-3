@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DJrs7790W/5tzYI9oQWoXmThD291ABDk2tZr8jZ8dgpoHzOHi/xvLQK0Fc8HL4y/nXG62kIglZFwJNqaqB53CA==",
+  "dgSpecHash": "am7H5vZWUIiFr1ESrXjgNuD+gmqGxS55DmlWAhVrYuMW+E/YZ2UuHeJ3xHBWagvTcCE2bpafdDv2MS3Y2MfxQA==",
   "success": true,
-  "projectFilePath": "C:\\Ecole\\Session4\\DSDD\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
+  "projectFilePath": "C:\\Session4\\Distrubution\\DSED_Module08-3\\DSED-Module08_Exercice3\\DSED-Module08_Exercice3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\charl\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\charl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

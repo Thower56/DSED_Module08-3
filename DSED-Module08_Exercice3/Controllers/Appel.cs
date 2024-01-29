@@ -6,7 +6,7 @@
         public int IdAgent { get; set; }
         public DateTime DebutAppel { get; set; }
         public DateTime FinAppel { get; set; }
-        public double DureeAppel => (double)(FinAppel - DebutAppel).TotalMinutes;
+        public double DureeAppel => FinAppel > DebutAppel  ? (double)(FinAppel - DebutAppel).TotalMinutes : 0 ;
            
     }
 }

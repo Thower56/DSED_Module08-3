@@ -49,7 +49,7 @@
                 },
             };
         public static int NombreAppels => m_Appels.Count;
-        public static double DureeMoyenneAppels => m_Appels.Average(a => a.DureeAppel);
+        public static double DureeMoyenneAppels => m_Appels.Average(appel => appel.DureeAppel);
         public static int DernierId => m_Appels.Last().Id;
         public static int NombreAgent => m_Appels.DistinctBy(appel => appel.IdAgent).Count();
 

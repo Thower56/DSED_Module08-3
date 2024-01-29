@@ -11,12 +11,12 @@ namespace DSED_Module08_Exercice3.Controllers
     public class StatistiquesController : ControllerBase
     {
         private IHubContext<CentreAppelHub> m_CentreAppel;
-        //StatistiquesController(IHubContext<CentreAppelHub> p_CentreAppel) 
-        //{
-        //    m_CentreAppel = p_CentreAppel;
-        //}
+        public StatistiquesController(IHubContext<CentreAppelHub> p_CentreAppel)
+        {
+            m_CentreAppel = p_CentreAppel;
+        }
 
-        public StatistiquesController() { }
+        //public StatistiquesController() { }
 
         [HttpGet]
         [ProducesResponseType(200)]
@@ -47,12 +47,12 @@ namespace DSED_Module08_Exercice3.Controllers
             {
                 return BadRequest();
             }
-            p_Appel.Id = Statistique.DernierId + 1;
+            p_Appel.Id = Statistique.GetAppels().Last().Id + 1;
             p_Appel.DebutAppel = DateTime.Now;
-            p_Appel.FinAppel = DateTime.Now;
             p_Appel.IdAgent = id;
 
             Statistique.AddAppel(p_Appel);
+            m_CentreAppel.Clients.All.SendAsync("Update");
             return CreatedAtAction(nameof(Get), new { id = p_Appel.Id }, p_Appel);
         }
 
@@ -60,8 +60,12 @@ namespace DSED_Module08_Exercice3.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public ActionResult Put(int id)
+        public ActionResult Put(int id, [FromBody] Appel p_Appel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
             int index = Statistique.GetAppels().FindIndex(a => a.Id == id);
 
@@ -70,8 +74,8 @@ namespace DSED_Module08_Exercice3.Controllers
                 return NotFound();
             }
 
-            Statistique.GetByIdAppel(id).FinAppel = DateTime.Now;
-
+            p_Appel.FinAppel = DateTime.Now;
+            m_CentreAppel.Clients.All.SendAsync("Update");
             return NoContent();
 
         }
